@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: #f7ecef;
+  color: #1f1f1f;
+}
+
+::selection {
+  background: rgba(232, 62, 116, 0.24);
+}
+
+.glass {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 249, 250, 0.76);
+  box-shadow: 0 18px 48px rgba(31, 31, 31, 0.08);
+  backdrop-filter: blur(22px);
+}
+
+.hive-gradient-text {
+  background: linear-gradient(135deg, #e83e74, #ff5c93);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.soft-grid {
+  background-image:
+    linear-gradient(rgba(232, 62, 116, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232, 62, 116, 0.08) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.masonry {
+  column-count: 1;
+  column-gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
