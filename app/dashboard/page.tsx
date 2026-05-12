@@ -12,7 +12,7 @@ export default async function DashboardPage() {
   const admin = await requireAdmin();
   if (!admin) redirect("/studio-admin-access");
 
-  const [stats, categories, images] = await Promise.all([getDashboardStats(), getCategories(), getImages()]);
+  const [stats, categories, images]: any = await Promise.all([getDashboardStats(), getCategories(), getImages()]);
 
   return (
     <main className="min-h-screen bg-blush bg-soft-radial px-6 py-8 text-ink">
@@ -64,7 +64,7 @@ export default async function DashboardPage() {
             <h2 className="font-heading text-2xl font-bold">Latest uploads</h2>
             <div className="mt-5 grid gap-3">
               {stats.latestUploads.length ? (
-                stats.latestUploads.map((item) => (
+                stats.latestUploads.map((item: any) => (
                   <div key={item.id} className="flex items-center gap-4 rounded-2xl bg-white/60 p-3">
                     <Image
                       src={item.image_url}
