@@ -40,11 +40,11 @@ export default async function DashboardPage() {
             <h2 className="font-heading text-2xl font-bold">Uploads by category</h2>
             <div className="mt-6 grid gap-4">
               {Object.entries(stats.uploadsByCategory).length ? (
-                Object.entries(stats.uploadsByCategory).map(([name, count]) => (
+                Object.entries(stats.uploadsByCategory).map(([name, count]: any) => (
                   <div key={name}>
                     <div className="flex items-center justify-between text-sm font-bold">
                       <span>{name}</span>
-                      <span>{count}</span>
+                      <span>{String (count)}</span>
                     </div>
                     <div className="mt-2 h-3 overflow-hidden rounded-full bg-white/70">
                       <div
