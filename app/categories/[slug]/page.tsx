@@ -28,8 +28,8 @@ export default async function CategoryDetailPage({
 
   if (!category) notFound();
 
-  const images = await getImages({ categoryId: category.id });
-  const hero = category.thumbnail_url || images[0]?.image_url;
+const images: any[] = await getImages({ categoryId: category.id });
+const hero = category.thumbnail_url || images?.[0]?.image_url;
 
   return (
     <PageShell>
