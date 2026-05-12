@@ -9,10 +9,13 @@ import { getCategoryBySlug, getImages } from "@/lib/data";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const category = await getCategoryBySlug(params.slug);
+  const category: any = await getCategoryBySlug(params.slug);
+
   return {
-    title: category ? category.name : "Category",
-    description: category ? `Explore ${category.name} by Social Hive Studio.` : "Social Hive Studio category gallery."
+    title: category?.name || "Category",
+    description: category?.name
+      ? `Explore ${category.name} by Social Hive Studio.`
+      : "Social Hive Studio category gallery."
   };
 }
 
